@@ -44,7 +44,7 @@ def extract_text_from_pdf(pdf_file, start_page, end_page):
 def process_pdf_chunk(chunk_text, api_key):
     prompt = f"""
     Analyze the following text extracted from an SAT question paper and format it into a structured JSON output. Extract the following details for each question:
-
+    - Question ID (for example - 6ed4df)
     - Question text including the complete passage, table (in markdown), etc.
     - Options (A, B, C, D, and sometimes E)
     - Correct answer (the letter of the correct option)
@@ -58,6 +58,7 @@ def process_pdf_chunk(chunk_text, api_key):
     {{
       "questions": [
         {{
+          "question_id": "6ed4qc",
           "question_text": "What is the capital of France?",
           "options": [
             {{"label": "A", "text": "London"}},
